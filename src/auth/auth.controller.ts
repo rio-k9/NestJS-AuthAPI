@@ -33,8 +33,8 @@ export class AuthController {
   @UseGuards(AuthGuard())
   me(@GetUser() user: User) {
     let response: Object = user
-    const keysToDelete: Array<string> = ["salt", "password"]
-    keysToDelete.forEach(k => delete response[k])
+    // const keysToDelete: Array<string> = ["salt", "password"]
+    // keysToDelete.forEach(k => delete response[k])
     return response
   }
 }
