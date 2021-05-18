@@ -47,29 +47,33 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Connecting with MySQL
 
-```bash
-# unit tests
-$ npm run test
+Ensure you have MySQL installed on your PC. If not you will need both MySQL (and Homebrew if you use a Mac)
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
+1) Install Homebrew (Mac Only)
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-## Support
+2) Install MySQL
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Mac:
+$ brew install mysql
 
-## Stay in touch
+Linux:
+$ sudo apt-get install mysql
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+3) Setup MySQL
 
-## License
+$ sudo mysqladmin -u root password NEWPASSWORD
 
-  Nest is [MIT licensed](LICENSE).
+$ sudo mysql -u root -p
+
+Enter your new mysql password
+
+$ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEWPASSWORD';
+
+$ mysql> CREATE DATABASE nestjs;
+
+Go to your NestJS project and update config/typeorm.config.ts with your password
+```
