@@ -8,5 +8,5 @@ export declare class AuthController {
     signIn(authCredentialsDto: AuthCredentialsDto): Promise<{
         accessToken: string;
     }>;
-    me(user: User): Object;
+    me(user: User): User;
 }

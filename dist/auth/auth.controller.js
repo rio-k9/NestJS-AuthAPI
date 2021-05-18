@@ -30,7 +30,7 @@ let AuthController = class AuthController {
         return this.authService.signIn(authCredentialsDto);
     }
     me(user) {
-        let response = user;
+        const response = user;
         return response;
     }
 };

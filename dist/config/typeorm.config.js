@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
+const config = {
     type: 'mysql',
     host: 'localhost',
     port: 3306,
@@ -10,4 +10,5 @@ exports.default = {
     entities: [__dirname + '/../**/*.entity.{js,ts}'],
     synchronize: true,
 };
+exports.default = config;
 //# sourceMappingURL=typeorm.config.js.map

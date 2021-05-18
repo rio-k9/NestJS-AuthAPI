@@ -1,3 +1,3 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-declare const _default: TypeOrmModuleOptions;
-export default _default;
+declare const config: TypeOrmModuleOptions;
+export default config;
