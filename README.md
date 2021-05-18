@@ -34,19 +34,6 @@
 $ npm install
 ```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
 ## Connecting with MySQL
 
 Ensure you have MySQL installed on your PC. If not you will need both MySQL (and Homebrew if you use a Mac)
@@ -75,5 +62,19 @@ $ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 
 
 $ mysql> CREATE DATABASE nestjs;
 
-Go to your NestJS project and update config/typeorm.config.ts with your password
+Go to your NestJS project and update config/typeorm.config.ts with your MySQL password
+```
+
+
+## Running the app
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
 ```
