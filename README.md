@@ -38,20 +38,20 @@ $ npm install
 
 Ensure you have MySQL installed on your PC. If not you will need both MySQL (and Homebrew if you use a Mac)
 
+### Mac
+
+Install Homebrew and NodeJS if you don't have them:
 ```
-1) Install Homebrew (Mac Only)
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-2) Install MySQL
+$ brew install nodejs
 
-Mac:
-$ brew install mysql
+$ brew install npm
 
-Linux:
-$ sudo apt-get install mysql
+```
 
-3) Setup MySQL
-
+Then follow these MySQL instructions:
+```
 $ sudo mysqladmin -u root password NEWPASSWORD
 
 $ sudo mysql -u root -p
@@ -61,11 +61,27 @@ Enter your new mysql password
 $ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEWPASSWORD';
 
 $ mysql> CREATE DATABASE nestjs;
+```
 
-Go to your NestJS project and update config/typeorm.config.ts with your MySQL password
+### Linux
+
+Follow these instructions then follow the below instructions. https://www.mysqltutorial.org/install-mysql-ubuntu/
+
+```
+$ sudo mysql -u root -p
+
+Enter your new mysql password
+
+$ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_MYSQL_PASWORD';
+
+$ mysql> CREATE DATABASE nestjs;
+
 ```
 
 ## Running the app
+
+
+Go to your NestJS project and update config/typeorm.config.ts with your MySQL password
 
 ```bash
 # development
