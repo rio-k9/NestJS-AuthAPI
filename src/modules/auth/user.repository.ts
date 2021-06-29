@@ -11,8 +11,6 @@ import * as bcrypt from 'bcrypt';
 export class UserRepository extends Repository<User> {
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
     const { username, password } = authCredentialsDto;
-    const exists = this.findOne({ username });
-    if (exists) return null;
     const user = new User();
     user.salt = await bcrypt.genSalt();
     user.username = username;
